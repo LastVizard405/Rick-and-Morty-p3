@@ -1,56 +1,89 @@
 .app {
-  flex-direction: column;
-  gap: 2em;
-  .app__body {
-    padding: 1em 3em;
-  }
+	flex-direction: column;
+	gap: 2em;
+	.app__body {
+		padding: 1em 3em;
+	}
 }
 .form {
-  margin-bottom: 1.5em;
-  text-align: center;
-  .form__input {
-    padding: 0.5em 0.2em;
-    border-radius: 0.5em 0 0 0.5em;
-    width: 20em;
-    text-align: center;
-  }
-  .form__btn {
-    padding: 0.5em 0.8em;
-    background-color: #04a904;
-    color: #fff;
-    font-weight: 500;
-    border-radius: 0 0.5em 0.5em 0;
-    transition: background-color 0.5s ease;
-    &:hover {
-      background-color: var(--secondary-color);
-    }
-  }
+	margin-bottom: 1.5em;
+	text-align: center;
+	.form__input {
+		padding: 0.5em 0.2em;
+		border-radius: 0.5em 0 0 0.5em;
+		width: 20em;
+		text-align: center;
+	}
+	.form__btn {
+		padding: 0.5em 0.8em;
+		background-color: #04a904;
+		color: #fff;
+		font-weight: 500;
+		border-radius: 0 0.5em 0.5em 0;
+		transition: background-color 0.5s ease;
+		&:hover {
+			background-color: var(--secondary-color);
+		}
+	}
 }
 .cards__container {
-  gap: 2em;
-  padding-bottom: 3em;
-  flex-wrap: wrap;
+	gap: 2em;
+	padding-bottom: 3em;
+	flex-wrap: wrap;
 }
-.app__hero{
-  width: 100%;
+.app__hero {
+	width: 100%;
 }
 
-.loader__container{
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--primary-color);
+.loader__container {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--primary-color);
 }
-  .loader {	
-      width: 10%;
-      height: 10%;
-      aspect-ratio: 1;
-      animation: l1 1s infinite;
-    }
-  
-   @keyframes l1 {
-    0%   {transform: perspective(1000px) rotateY(  0deg)}
-    100% {transform: perspective(1000px) rotateY(360deg)}
-  }
+.loader {
+	width: 10%;
+	height: 10%;
+	aspect-ratio: 1;
+	animation: l1 1s infinite;
+}
+
+@keyframes l1 {
+	0% {
+		transform: perspective(1000px) rotateY(0deg);
+	}
+	100% {
+		transform: perspective(1000px) rotateY(360deg);
+	}
+}
+
+.pagination {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin-top: 2em;
+	gap: 1em;
+
+	.page {
+		background-color: var(--primary-color);
+		color: aliceblue;
+		padding: 0.2em 0.5em;
+		cursor: pointer;
+		border-radius: 0.5em;
+		font-weight: 600;
+		transition: 0.5s ease;
+		border: 0.1px solid #04a904;
+		&:hover {
+			background-color: #04a904;
+		}
+	}
+
+	.active {
+		background-color: #04a904;
+		color: aliceblue;
+	}
+}

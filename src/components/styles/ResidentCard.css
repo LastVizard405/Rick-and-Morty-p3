@@ -1,102 +1,104 @@
-.resident{
-    width: 100%;
-    max-width: 19em;
-    background-color: var(--secondary-color);
-    border-radius: 1em;
-    overflow: hidden;
-    transition: all .5s;
-    &:hover{
-        scale: 1.01;
-        box-shadow: 0 0 10px 1px white;
-    }
+.resident {
+	width: 100%;
+	max-width: 19em;
+	background-color: var(--secondary-color);
+	border-radius: 1em;
+	overflow: hidden;
+	transition: all 0.5s;
+	&:hover {
+		scale: 1.01;
+		box-shadow: 0 0 10px 1px white;
+	}
 }
-.resident__header{
-    position: relative;
+.resident__header {
+	position: relative;
 
+	.resident__status-container {
+		position: absolute;
+		top: 0.8em;
+		background-color: var(--secondary-color);
+		color: white;
+		min-width: 7em;
+		padding: 0.3em 1em;
+		border-radius: 0 0.5em 0.5em 0;
+		gap: 0.8em;
 
-    .resident__status-container{
-        position: absolute;
-        top: 0.8em;
-        background-color: var(--secondary-color);
-        color: white;
-        min-width: 7em;
-        padding: 0.3em 1em;
-        border-radius: 0 0.5em 0.5em 0;
-        gap: 0.8em;
+		.resident__status-circle {
+			width: 1em;
+			aspect-ratio: 1;
+			background-color: #aaa;
+			border-radius: 50%;
+		}
 
-        .resident__status-circle{
-            width: 1em;
-            aspect-ratio: 1;
-            background-color: #aaa;
-            border-radius: 50%;
-        }
-
-        .resident__status{
-            font-size: 0.9em;
-            font-weight: 600;
-        }
-        .Alive{
-            background-color: #008000;
-        }
-        .Dead{
-            background-color: #ff0000;
-        }
-    }
+		.resident__status {
+			font-size: 0.9em;
+			font-weight: 600;
+		}
+		.Alive {
+			background-color: #008000;
+		}
+		.Dead {
+			background-color: #ff0000;
+		}
+	}
 }
 
-.resident__body{
-    color: white;
-    padding: 1.5em 1.5em 2em;
+.resident__body {
+	color: white;
+	padding: 1.5em 1.5em 2em;
 
-    .resident__name{
-        text-align: center;
-        font-size: 1.5em;
-        font-weight: 900;
-        font-family: var(--font-alternative);
-        color: #04a904;
-    }
-    .resident__hr{
-        margin: 1em 0;
-        border-color: #9994;
-    }
+	.resident__name {
+		text-align: center;
+		font-size: 1.5em;
+		font-weight: 900;
+		font-family: var(--font-alternative);
+		color: #04a904;
+	}
+	.resident__hr {
+		margin: 1em 0;
+		border-color: #9994;
+	}
 
-    .resident__list{
-        gap: 0.8em;
+	.resident__list {
+		gap: 0.8em;
 
-        .resident__item{
-            gap: 0.2em;
-            .resident__label {
-                font-size: 1.2em;
-                font-weight: 500;
-                color: #999;
-                padding-left: 0em;
-                .resident__value {
-                    font-family: var(--font-alternative);
-                    font-size: 1.2em;
-                    color: aliceblue;
-                  }
-              }
+		.resident__item {
+			gap: 0.2em;
+			.resident__label {
+				font-size: 1.2em;
+				font-weight: 500;
+				color: #999;
+				padding-left: 0em;
+				.resident__value {
+					font-family: var(--font-alternative);
+					font-size: 1.2em;
+					color: aliceblue;
+				}
+			}
+		}
+	}
+}
 
-            }
-          }
-        }
+.loader__container {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--primary-color);
+}
+.loader {
+	width: 10%;
+	height: 10%;
+	aspect-ratio: 1;
+	animation: l1 1s infinite;
+}
 
-        .loader__container{
-            display: flex;
-            width: 100%;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: var(--primary-color);
-          }
-            .loader {	
-                width: 10%;
-                height: 10%;
-                aspect-ratio: 1;
-                animation: l1 1s infinite;
-              }
-            
-             @keyframes l1 {
-              0%   {transform: perspective(1000px) rotateY(  0deg)}
-              100% {transform: perspective(1000px) rotateY(360deg)}
-            }
+@keyframes l1 {
+	0% {
+		transform: perspective(1000px) rotateY(0deg);
+	}
+	100% {
+		transform: perspective(1000px) rotateY(360deg);
+	}
+}
